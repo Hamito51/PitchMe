@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+
+
 class Address(models.Model):
     STREET_TYPE = [
         ('Улица', 'ул'),
@@ -18,4 +20,4 @@ class Address(models.Model):
     street_type = models.CharField(max_length=10, choices=STREET_TYPE)
     street = models.CharField(max_length=20)
     house = models.CharField(max_length=10)
-    flat = models.CharField(max_length=10)
+    flat = models.CharField(max_length=10, null=True, blank=True)

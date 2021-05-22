@@ -1,3 +1,4 @@
+import uuid as uuid
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -12,6 +13,7 @@ class Topic(models.Model):
 
 
 class Event(models.Model):
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4)
     title = models.CharField(max_length=50)
     event_author = models.ForeignKey(User, on_delete=models.PROTECT)
     topics = models.ManyToManyField(Topic, null=True, blank=True, verbose_name="Темы")

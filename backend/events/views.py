@@ -35,7 +35,6 @@ class EventViewSet(ViewSet, GenericAPIView):
         serializer = self.get_serializer_class()(data=data)
         serializer.is_valid(raise_exception=True)
         val_data = serializer.validated_data
-
         event = create_event(event_author=event_author, **val_data)
         return Response(serializer.data, status=201)
 
