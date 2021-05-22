@@ -4,7 +4,7 @@ from django.shortcuts import render
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
-
+from django_filters import rest_framework as filters
 from events.models import Event
 from events.selectors import EventsFilter
 from events.serializers import EventDetailSerializer, EventListSerializer
@@ -14,7 +14,8 @@ from events.services import create_event
 class EventViewSet(ViewSet, GenericAPIView):
 
     queryset = Event.objects.all()
-    filter_backends = (EventsFilter,)
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_class = EventsFilter
 
     def get_serializer_class(self):
         if self.action in ('retrieve', 'create', 'update'):
