@@ -10,6 +10,12 @@ class TopicSerializer(serializers.ModelSerializer):
         exclude = ('topic_author', 'uuid')
 
 
+class TopicDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Topic
+        exclude = ('topic_author',)
+
+
 class EventCreateSerializer(serializers.ModelSerializer):
     address = AddressSerializer()
 

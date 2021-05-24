@@ -7,7 +7,8 @@ from rest_framework.viewsets import ViewSet
 from django_filters import rest_framework as filters
 from events.models import Event, Topic
 from events.selectors import EventsFilter
-from events.serializers import EventDetailSerializer, EventListSerializer, TopicSerializer, EventCreateSerializer
+from events.serializers import EventDetailSerializer, EventListSerializer, TopicSerializer, EventCreateSerializer, \
+    TopicDetailSerializer
 from events.services import create_event, create_topic, update_event, update_topic
 
 
@@ -56,9 +57,13 @@ class EventViewSet(ViewSet, GenericAPIView):
 
 
 class TopicViewSet(ViewSet, GenericAPIView):
+    queryset = Topic.objects.all()
 
     def get_serializer_class(self):
-        return TopicSerializer
+        if self.action in ('list', 'update', 'retrieve'):
+            return TopicDetailSerializer
+        if self.action in ('create',):
+            return TopicSerializer
 
     def list(self, request):
         data = request.data
