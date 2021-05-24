@@ -12,5 +12,7 @@ class AddressSerializer(serializers.ModelSerializer):
             'street_type',
             'street',
             'house',
-            'flat'
+            'flat',
+
+
         ]
