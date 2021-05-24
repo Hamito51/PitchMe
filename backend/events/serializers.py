@@ -30,7 +30,7 @@ class EventDetailSerializer(serializers.ModelSerializer):
 class EventListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
-        fields = ('title', 'dos', 'doe')
+        fields = ('uuid', 'title', 'dos', 'doe')
 
 
 

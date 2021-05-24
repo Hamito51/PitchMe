@@ -1,0 +1,100 @@
+[
+  {
+    "model": "auth.user",
+    "pk": "6",
+    "fields": {
+      "last_login": null,
+      "date_joined": "2021-04-06T12:38:18.208Z",
+      "username": "First_user",
+      "is_active": true,
+      "password": "pbkdf2_sha256$260000$AJYBmPtUpOqln5S6AEYUlo$hv9onWQ+CX6lpMrqz4iSyQB9lqRzhhNQrpwclTAy9ow="
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": "7",
+    "fields": {
+      "last_login": null,
+      "date_joined": "2021-04-06T12:38:18.208Z",
+      "username": "Second_user",
+      "is_active": true,
+      "password": "pbkdf2_sha256$260000$AJYBmPtUpOqln5S6AEYUlo$hv9onWQ+CX6lpMrqz4iSyQB9lqRzhhNQrpwclTAy9ow="
+    }
+  },
+    {
+    "model": "events.event",
+    "pk": "4f760e58-9259-44f6-8550-451c90973d68",
+    "fields": {
+      "title": "First_event",
+      "dos": "2021-04-06T12:00:00.208Z",
+      "doe": "2021-04-06T15:38:18.208Z",
+      "address_id": 1,
+      "event_author_id": "1"
+    }
+  },
+      {
+    "model": "events.event",
+    "pk": "90cf088d-a4c8-4769-a031-92a3f80f283f",
+    "fields": {
+      "title": "Second_event",
+      "dos": "2021-04-23T12:00:00.208Z",
+      "doe": "2021-04-23T15:38:18.208Z",
+      "address_id": 2,
+      "event_author_id": "2"
+    }
+  },
+   {
+    "model": "events.event_topics",
+    "pk": "8",
+    "fields": {
+      "event_id": "4f760e58-9259-44f6-8550-451c90973d68",
+      "topic_id": "2560143c-119e-4a42-998e-f9ad2feb1102"
+    }
+  },
+  {
+    "model": "events.event_topics",
+    "pk": "9",
+    "fields": {
+      "event_id": "4f760e58-9259-44f6-8550-451c90973d68",
+      "topic_id": "822d7d3f-3da7-4e59-a2f6-28fe82f847b7"
+    }
+  },
+    {
+    "model": "events.topic",
+    "pk": "2560143c-119e-4a42-998e-f9ad2feb1102",
+    "fields": {
+      "title": "First",
+      "speaker": "Mike Shinoda",
+      "topic_author_id": 1
+    }
+  },
+    {
+    "model": "events.topic",
+    "pk": "822d7d3f-3da7-4e59-a2f6-28fe82f847b7",
+    "fields": {
+      "title": "Second",
+      "speaker": "Anthony Kiedis",
+      "topic_author_id": 1
+    }
+  },
+      {
+    "model": "information.address",
+    "pk": "1",
+    "fields": {
+      "city": "Москва",
+      "street_type": "Улица",
+      "street": "Ленина",
+      "house": 1
+    }
+  },
+        {
+    "model": "information.address",
+    "pk": "2",
+    "fields": {
+      "city": "Питер",
+      "street_type": "Улица",
+      "street": "Софийская",
+      "house": 6
+    }
+  }
+]
