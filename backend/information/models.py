@@ -4,6 +4,7 @@ from django.db import models
 
 
 class Address(models.Model):
+    """Модель для хранения адреса"""
     STREET_TYPE = [
         ('Улица', 'ул'),
         ('Проспект', 'пр-кт'),

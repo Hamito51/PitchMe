@@ -7,6 +7,7 @@ from information.models import Address
 
 
 class Topic(models.Model):
+    """Модель для хранения тем"""
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4)
     title = models.CharField(max_length=50)
     topic_author = models.ForeignKey(User, on_delete=models.PROTECT)
@@ -14,6 +15,7 @@ class Topic(models.Model):
 
 
 class Event(models.Model):
+    """Модель для хранения проходящих событий"""
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4)
     title = models.CharField(max_length=50)
     event_author = models.ForeignKey(User, on_delete=models.PROTECT)

@@ -42,7 +42,6 @@ class EventViewSet(ViewSet, GenericAPIView):
         event = create_event(event_author=event_author, **val_data)
         return Response(serializer.data, status=201)
 
-    # @swagger_auto_schema(responses={200: ClubDetailSerializer()})
     def retrieve(self, request, pk):
         event = Event.objects.get(pk=pk)
         ser = self.get_serializer_class()(event, context={"request": request})
